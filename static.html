@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+    }
+    .theme.dark {
+        background-color: #303030;
+        color: #fafafa;
+    }
+    .theme.light {
+        background-color: #f4f4f4;
+        color: #565656;
+    }
+    .wrapper {
+        overflow: hidden;
+        padding: 20px;
+        padding-top: 118px;
+    }
+    .cf:before,
+    .cf:after {
+        content: " ";
+        display: table;
+    }
+    .cf:after {
+        clear: both;
+    }
+    .cf {
+        *zoom: 1;
+    }
+    .site-data {
+        float: left;
+        height: 275px;
+        width: 30%;
+        /*max-width: 400px;*/
+        padding: 0 10px;
+    }
+    .color-box {
+        float: left;
+        height: 50px;
+        width: 50px;
+    }
+    .color-box:hover {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        border: none;
+    }
+    .color-box.selected {
+        border: 10px;
+    }
+    .hidden {
+        display: none;
+    }
+    .undefined {
+        color: #707070;
+    }
+    #currentColor {
+        font-weight: 600;
+        font-family: monospace;
+        font-size: 20px;
+        margin: 0 !important;
+        padding: 50px 0;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+    }
+
+    .theme.dark #currentColor {
+        background-color: #202020;
+    }
+    .theme.light #currentColor {
+        background-color: #ececec;
+    }
+
+    </style>
+</head>
+<body class="theme light">
+    <div id="currentColor"><span class="undefined">No color selected</span></div>
+    <div class="wrapper">
+        <div class="site-data">
+            <h1 class="title">Self</h1>
+            <div class="favicon color-data cf">
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #F3F3F3"></div>
+                <div class="color-box" style="background-color: #A59C77"></div>
+                <div class="color-box" style="background-color: #343638"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">Google</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #EF621F"></div>
+                <div class="color-box" style="background-color: #FDFDFC"></div>
+                <div class="color-box" style="background-color: #B2C098"></div>
+                <div class="color-box" style="background-color: #072C12"></div>
+                <div class="color-box" style="background-color: #3A87E9"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+                <div class="color-box" style="background-color: #3E3B43"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">Bing</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #6D6142"></div>
+                <div class="color-box" style="background-color: #977A2F"></div>
+                <div class="color-box" style="background-color: #D19D15"></div>
+                <div class="color-box" style="background-color: #FEB800"></div>
+                <div class="color-box" style="background-color: #50504F"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #333333"></div>
+                <div class="color-box" style="background-color: #FAFAFA"></div>
+                <div class="color-box" style="background-color: #666665"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">Reddit</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #FCFAF9"></div>
+                <div class="color-box" style="background-color: #D0E7FA"></div>
+                <div class="color-box" style="background-color: #6C6C72"></div>
+                <div class="color-box" style="background-color: #AEABB0"></div>
+                <div class="color-box" style="background-color: #3C242A"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+                <div class="color-box" style="background-color: #C2C9D8"></div>
+                <div class="color-box" style="background-color: #3C4C92"></div>
+            </div>
+        </div>
+
+        <div class="site-data ">
+            <h1 class="title">Facebook</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #394E82"></div>
+                <div class="color-box" style="background-color: #4862A2"></div>
+                <div class="color-box" style="background-color: #F7F8FA"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #3E5884"></div>
+                <div class="color-box" style="background-color: #ACB4C0"></div>
+                <div class="color-box" style="background-color: #ECEFF4"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Baesman</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #59B347"></div>
+                <div class="color-box" style="background-color: #FFFFFF"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #5ECFFA"></div>
+                <div class="color-box" style="background-color: #6D2D67"></div>
+                <div class="color-box" style="background-color: #9FD655"></div>
+                <div class="color-box" style="background-color: #D4D4CE"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">Patagonia</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #E07545"></div>
+                <div class="color-box" style="background-color: #0C67B7"></div>
+                <div class="color-box" style="background-color: #8CA3BD"></div>
+                <div class="color-box" style="background-color: #51365E"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #262626"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+                <div class="color-box" style="background-color: #D37144"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Virool</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #000E27"></div>
+                <div class="color-box" style="background-color: #000F2A"></div>
+                <div class="color-box" style="background-color: #0C57CD"></div>
+                <div class="color-box" style="background-color: #0D5BD6"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #31343C"></div>
+                <div class="color-box" style="background-color: #9099A8"></div>
+                <div class="color-box" style="background-color: #BCBEC2"></div>
+                <div class="color-box" style="background-color: #BDA3A0"></div>
+                <div class="color-box" style="background-color: #CECD"></div>
+                <div class="color-box" style="background-color: #D7B9B1"></div>
+                <div class="color-box" style="background-color: #D7D7DC"></div>
+                <div class="color-box" style="background-color: #DEE0E4"></div>
+                <div class="color-box" style="background-color: #E8EBEF"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">ViralGains</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #22B6DC"></div>
+                <div class="color-box" style="background-color: #FF6200"></div>
+                <div class="color-box" style="background-color: #FFCC00"></div>
+                <div class="color-box" style="background-color: #FFD900"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #0C0905"></div>
+                <div class="color-box" style="background-color: #201C17"></div>
+                <div class="color-box" style="background-color: #1F455D"></div>
+                <div class="color-box" style="background-color: #249EE2"></div>
+                <div class="color-box" style="background-color: #2F3031"></div>
+                <div class="color-box" style="background-color: #5A6769"></div>
+                <div class="color-box" style="background-color: #704337"></div>
+                <div class="color-box" style="background-color: #8C8B85"></div>
+                <div class="color-box" style="background-color: #CCCAC7"></div>
+                <div class="color-box" style="background-color: #FCFCFC"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Vogue</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #131212"></div>
+                <div class="color-box" style="background-color: #212020"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #28251E"></div>
+                <div class="color-box" style="background-color: #6E5642"></div>
+                <div class="color-box" style="background-color: #A4947E"></div>
+                <div class="color-box" style="background-color: #CFCCC2"></div>
+                <div class="color-box" style="background-color: #F5F5F4"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Hulu</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #6BAC34"></div>
+                <div class="color-box" style="background-color: #77B438"></div>
+                <div class="color-box" style="background-color: #86BC3A"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #F1F1F1"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">YouTube</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #E62117"></div>
+                <div class="color-box" style="background-color: #F07A74"></div>
+                <div class="color-box" style="background-color: #FEFBFB"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #020202"></div>
+                <div class="color-box" style="background-color: #2A2520"></div>
+                <div class="color-box" style="background-color: #554D45"></div>
+                <div class="color-box" style="background-color: #6F818E"></div>
+                <div class="color-box" style="background-color: #C0ADA4"></div>
+                <div class="color-box" style="background-color: #CB382F"></div>
+                <div class="color-box" style="background-color: #EFEFEF"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">CSS Tricks</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #E18727"></div>
+                <div class="color-box" style="background-color: #EDB67D"></div>
+                <div class="color-box" style="background-color: #FAECDD"></div>
+                <div class="color-box" style="background-color: #FCF3EB"></div>
+                <div class="color-box" style="background-color: #FEFCF9"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #232424"></div>
+                <div class="color-box" style="background-color: #5A7AD5"></div>
+                <div class="color-box" style="background-color: #9F9383"></div>
+                <div class="color-box" style="background-color: #F1F1F1"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Amazon</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #040404"></div>
+                <div class="color-box" style="background-color: #858585"></div>
+                <div class="color-box" style="background-color: #F7C06D"></div>
+                <div class="color-box" style="background-color: #FDFCFA"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #06398A"></div>
+                <div class="color-box" style="background-color: #28272A"></div>
+                <div class="color-box" style="background-color: #586A71"></div>
+                <div class="color-box" style="background-color: #80A3B8"></div>
+                <div class="color-box" style="background-color: #CE7639"></div>
+                <div class="color-box" style="background-color: #D1CDC4"></div>
+                <div class="color-box" style="background-color: #F6F7F7"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Pinterest</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #B80006"></div>
+                <div class="color-box" style="background-color: #C62D3E"></div>
+                <div class="color-box" style="background-color: #E39FA5"></div>
+                <div class="color-box" style="background-color: #F9FAFA"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #17578C"></div>
+                <div class="color-box" style="background-color: #191916"></div>
+                <div class="color-box" style="background-color: #362F28"></div>
+                <div class="color-box" style="background-color: #4C4741"></div>
+                <div class="color-box" style="background-color: #585858"></div>
+                <div class="color-box" style="background-color: #656463"></div>
+                <div class="color-box" style="background-color: #8D8380"></div>
+                <div class="color-box" style="background-color: #B3A3A0"></div>
+                <div class="color-box" style="background-color: #CA3D26"></div>
+                <div class="color-box" style="background-color: #FBFBFB"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Wordpress</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #00B7FF"></div>
+                <div class="color-box" style="background-color: #01A5DA"></div>
+                <div class="color-box" style="background-color: #6AC5E6"></div>
+                <div class="color-box" style="background-color: #B8E4F3"></div>
+                <div class="color-box" style="background-color: #F6FCFE"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #020405"></div>
+                <div class="color-box" style="background-color: #172230"></div>
+                <div class="color-box" style="background-color: #1D8BBC"></div>
+                <div class="color-box" style="background-color: #374452"></div>
+                <div class="color-box" style="background-color: #4D5968"></div>
+                <div class="color-box" style="background-color: #B7BABE"></div>
+                <div class="color-box" style="background-color: #C4C8CD"></div>
+                <div class="color-box" style="background-color: #E7EFF4"></div>
+                <div class="color-box" style="background-color: #FCFCFC"></div>
+            </div>
+        </div>
+        <div class="site-data ">
+            <h1 class="title">Apple</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #5C5C5C"></div>
+                <div class="color-box" style="background-color: #6D6D6D"></div>
+                <div class="color-box" style="background-color: #8F8F8F"></div>
+                <div class="color-box" style="background-color: #F8F8F8"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #2F3032"></div>
+                <div class="color-box" style="background-color: #9DA3AC"></div>
+                <div class="color-box" style="background-color: #F1F1F0"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">CNN</h1>
+            <div class="favicon">
+                <div class="color-box" style="background-color: #EAD2D2"></div>
+                <div class="color-box" style="background-color: #D24A4A"></div>
+                <div class="color-box" style="background-color: #B90000"></div>
+                <div class="color-box" style="background-color: #D70000"></div>
+                <div class="color-box" style="background-color: #DBA5A6"></div>
+            </div>
+            <div class="site">
+                <div class="color-box" style="background-color: #EDEDED"></div>
+                <div class="color-box" style="background-color: #FDFDFD"></div>
+                <div class="color-box" style="background-color: #5B463C"></div>
+                <div class="color-box" style="background-color: #C7C3BD"></div>
+                <div class="color-box" style="background-color: #74818B"></div>
+                <div class="color-box" style="background-color: #1C1E23"></div>
+                <div class="color-box" style="background-color: #0C0B0C"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">TechCrunch</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #FFFFFF"></div>
+                <div class="color-box" style="background-color: #139600"></div>
+                <div class="color-box" style="background-color: #0D9200"></div>
+                <div class="color-box" style="background-color: #008000"></div>
+                <div class="color-box" style="background-color: #008B00"></div>
+            </div>
+            <div class="site">
+                <div class="color-box" style="background-color: #EBEBEB"></div>
+                <div class="color-box" style="background-color: #F8F8F8"></div>
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+                <div class="color-box" style="background-color: #D9D9D8"></div>
+                <div class="color-box" style="background-color: #273726"></div>
+                <div class="color-box" style="background-color: #B1BAB8"></div>
+                <div class="color-box" style="background-color: #50867B"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">Snapchat</h1>
+            <div class="favicon color-data cf ">
+                <div class="color-box" style="background-color: #FDFDFD"></div>
+                <div class="color-box" style="background-color: #BFBE97"></div>
+                <div class="color-box" style="background-color: #B7B547"></div>
+                <div class="color-box" style="background-color: #D0CD13"></div>
+                <div class="color-box" style="background-color: #FEFB00"></div>
+            </div>
+            <div class="site color-data ">
+                <div class="color-box" style="background-color: #000000"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">New York Times</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #000000"></div>
+                <div class="color-box" style="background-color: #2D2D2D"></div>
+                <div class="color-box" style="background-color: #7F7F7F"></div>
+                <div class="color-box" style="background-color: #F3F3F3"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+                <div class="color-box" style="background-color: #A7A298"></div>
+                <div class="color-box" style="background-color: #2C292A"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">SpaceX</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #F4F4F4"></div>
+                <div class="color-box" style="background-color: #89959C"></div>
+                <div class="color-box" style="background-color: #181D20"></div>
+                <div class="color-box" style="background-color: #6A7176"></div>
+                <div class="color-box" style="background-color: #010508"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #FDFDFD"></div>
+                <div class="color-box" style="background-color: #1C2020"></div>
+                <div class="color-box" style="background-color: #8D98A5"></div>
+                <div class="color-box" style="background-color: #5B6B83"></div>
+                <div class="color-box" style="background-color: #CACBCD"></div>
+            </div>
+        </div>
+        <div class="site-data">
+            <h1 class="title">Alibaba</h1>
+            <div class="favicon color-data cf">
+                <div class="color-box" style="background-color: #F1722B"></div>
+                <div class="color-box" style="background-color: #F29B08"></div>
+                <div class="color-box" style="background-color: #F6CB04"></div>
+                <div class="color-box" style="background-color: #3D350D"></div>
+                <div class="color-box" style="background-color: #F7F505"></div>
+            </div>
+            <div class="site color-data">
+                <div class="color-box" style="background-color: #FEFEFE"></div>
+                <div class="color-box" style="background-color: #050404"></div>
+                <div class="color-box" style="background-color: #827571"></div>
+                <div class="color-box" style="background-color: #D2CDC8"></div>
+                <div class="color-box" style="background-color: #F3F4F3"></div>
+            </div>
+        </div>
+
+
+
+
+        <div class="site-data hidden">
+            <h1 class="title">Template</h1>
+            <!-- Data goes here -->
+        </div>
+    </div>
+    <script type="text/javascript">
+        // TODO Rename to more consistent, correct fn names
+        function oppositeColor(colorVal) {
+            var offset = -10;
+            return Math.abs((255 - colorVal + offset) % 255);
+        };
+        function rgbStringToRgbList(rgbString) {
+            var csv = rgbString.substring(rgbString.indexOf('rgb(') + 'rgb('.length, rgbString.length - 1);
+            var colors = csv.split(',').map(Number)
+            return colors.map(oppositeColor);
+        };
+
+        function RgbListToRgbString(rgbList) {
+            return 'rgb(' + rgbList[0] + ',' + rgbList[1] + ',' + rgbList[2] + ')';
+        };
+
+        function complementaryColor(color) {
+            var rgbVals = rgbStringToRgbList(color);
+            return RgbListToRgbString(rgbVals);
+        };
+
+        (function() {
+                var colorBoxes = document.getElementsByClassName('color-box');
+                for (var i = 0; i < colorBoxes.length; i++) {
+                    var currentColor = document.getElementById('currentColor');
+                    var it = colorBoxes[i];
+                    it.addEventListener('mouseenter', function(ev) {
+                        var color = getComputedStyle(ev.target).backgroundColor;
+                        var matchingColor = complementaryColor(color);
+                        currentColor.innerHTML = color;
+                        currentColor.style['color'] = matchingColor;
+                        currentColor.style['background-color'] = color;
+                        ev.target.style['border'] = '4px solid ' + matchingColor;
+                    });
+                    it.addEventListener('mouseleave', function(ev) {
+                        ev.target.style['border'] = 'None';
+                    });
+                    // it.addEventListener('click', function(ev) {
+                    //     var clearEls = document.getElementsByClassName('selected');
+                    //     for (var j = 0; j < colorBoxes.length; j++) {
+                    //         colorBoxes[j].classList.remove('selected');
+                    //     }
+                    //     ev.target.classList.add('selected');
+                    // });
+                }
+    })();
+    </script>
+</body>
+</html>
